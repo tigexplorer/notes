@@ -39,6 +39,7 @@ function html_menu( $current_item ) {
     } else {
         echo "<li><a href='notes_find.php'>Find</a></li>\n";
     }
+    echo "<li><a href='notes_edit.php?action=new&amp;pa=0'>New Main</a></li>\n";
     echo "</ul>\n";
 }
 
