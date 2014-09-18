@@ -54,18 +54,20 @@ if ( $action_ok == "yes" ) {
                 break;
 					    
 					    case "update":
-					         $fields = "title=?, notes=?, urls=?";
-					         $value1 = $_GET["form_mn_title"];
-					         $value2 = trim($_GET["form_mn_txt"]);
-					         $value3 = trim($_GET["form_mn_urls"]);
+				         $fields = "title=?, notes=?, urls=?";
+				         $value1 = $_GET["form_mn_title"];
+				         $value2 = trim($_GET["form_mn_txt"]);
+				         $value3 = trim($_GET["form_mn_urls"]);
 			            $query_condition = "id = ".$id;
 			            db_query_update_item_1("notes_main", $fields, $value1, $value2, $value3, $id);
 			            header("Location: notes_edit.php?action=display&pa=".$id);
-					         break;
+			            exit;
+				         break;
 					       
 					    case "kill":
                 db_query_delete_item_1("notes_main", $id);
                 header("Location: notes_main_list.php?action=list&find_option=p_and_c");
+                exit;
 				endswitch;
 		} else { 
 				$message = "No ID. Nothing to do..... "; 
