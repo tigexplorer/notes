@@ -136,8 +136,6 @@ echo "</div>\n"; // accordeon close
 if ( $z == 0 ) { 
     echo " :: No match found...";
 } else {
-    $zz = $z+1;	
-    $x = $z / $find_limit;
     echo "<p> :: found ".$z." items :: ";
 }
 echo "</div>";
