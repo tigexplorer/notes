@@ -119,7 +119,8 @@ if ( $action_ok == "no" ) {
 } 
 
 echo "<ul class='list-group'>";
-			
+
+$z = 0;		
 foreach ( $db_result as $tbl_row ) {
     $z += 1;
     echo "<li class='list-group-item'><a href='notes_edit.php?action=display&amp;pa=".$tbl_row["id"]."'>".substr($tbl_row["title"], 0, 50)."</a></li>";			
