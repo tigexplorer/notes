@@ -28,10 +28,6 @@ if ( isset( $_POST['action'] ) ) {
 if ( $action_ok != "yes" ) {
     $message = "No action. Nothing to do..... "; 
 }
-if ( isset( $_GET['find_limit_skip'] ) ) { 
-    $find_limit_skip = $_GET['find_limit_skip'];
-}
-
 	
 // check find_option
 $find_option_ok = "no";
@@ -134,8 +130,6 @@ echo "</ul>";
 if ( $z == 0 ) { 
     echo $message_find_string." :: No match found...";
 } else {
-    $zz = $z+1;	
-    $x = $z / $find_limit;
     echo "<p>".$message_find_string." :: found: ".$z." ::: ";
 }
 echo "</div>";
