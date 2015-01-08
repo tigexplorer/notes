@@ -12,7 +12,7 @@
 * @link     http://www.joergsorge.de
 */
 
-require "../../script/notes_lib_common.inc.php";
+require "../../scripts_notes/notes_lib_common.inc.php";
 ?>
 
 <!DOCTYPE html>

@@ -12,8 +12,8 @@
 * @link     http://www.joergsorge.de
 */
 
-require "../../script/notes_lib_db.inc.php";
-require "../../script/notes_lib_common.inc.php";
+require "../../scripts_notes/notes_lib_db.inc.php";
+require "../../scripts_notes/notes_lib_common.inc.php";
 
 $action_ok = "no";
 
