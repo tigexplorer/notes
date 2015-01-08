@@ -29,9 +29,9 @@ require "../../scripts_notes/notes_lib_common.inc.php";
  <link href="style/notes_style.css" rel="stylesheet">
  <script src="bootstrap/js/bootstrap.min.js"></script>
  <script type="text/javascript">
-	$(document).ready(function() {
- 		$("#frm_title").focus(); // will bring focus
- 	}
+	$( document ).ready(function() {
+  		$( "#frm_title" ).focus();
+	});
  </script>
 </head>
 <body>
