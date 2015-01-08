@@ -28,6 +28,9 @@ require "../../scripts_notes/notes_lib_common.inc.php";
  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
  <link href="style/notes_style.css" rel="stylesheet">
  <script src="bootstrap/js/bootstrap.min.js"></script>
+ <script type="text/javascript">
+ 	$("#frm_title").focus(); // will bring focus
+ </script>
 </head>
 <body>
 <?php
@@ -36,7 +39,7 @@ html_menu("find");
 echo "<form class='form-horizontal' role='form' action='notes_find_list.php' method='POST'>";
 echo "<input type='hidden' name='action' value='find'>";
 echo "<div class='form-group'>";
-echo "<input type='text' class='form-control text1' name='form_mn_title' value=''>";
+echo "<input id= 'frm_title' type='text' class='form-control text1' name='form_mn_title' value=''>";
 echo "<input type='text' class='form-control text1' name='form_mn_txt' value=''>";
 echo "<input type='text' class='form-control text1' name='form_mn_urls' value=''>";
 echo "<div class='col-lg-offset-2 col-lg-10'>";
