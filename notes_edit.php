@@ -109,7 +109,8 @@ echo "<input type='hidden' name='pa' value=".$id.">";
 // If parent
 if ( $tbl_row_parent ) {
     echo "<ul class='list-group'>";
-    echo "<li class='list-group-item'>".$tbl_row_parent["title"]."</li>";
+    //echo "<li class='list-group-item'>".$tbl_row_parent["title"]."</li>";
+    echo "<li class='list-group-item'><a href='notes_sub_list.php?action=find&amp;pa=".$tbl_row_parent["id"]."'>".$tbl_row_parent["title"]."</a></li>";
     echo "</ul>";
 }
 
