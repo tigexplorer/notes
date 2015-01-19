@@ -25,14 +25,14 @@ require "../../scripts_notes/notes_lib_common.inc.php";
 	<meta name="robots" content="noindex,nofollow">
 	<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<!-- Bootstrap core CSS -->
- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
- <link href="style/notes_style.css" rel="stylesheet">
- <script src="bootstrap/js/bootstrap.min.js"></script>
- <script type="text/javascript">
-	$( document ).ready(function() {
-  		$( "#frm_title" ).focus();
-	});
- </script>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="style/notes_style.css" rel="stylesheet">
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+  			$( "#frm_title" ).focus();
+		});
+	</script>
 </head>
 <body>
 <?php
