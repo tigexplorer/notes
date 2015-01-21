@@ -15,7 +15,7 @@ require "../../scripts_notes/notes_lib_db.inc.php";
 require "../../scripts_notes/notes_lib_common.inc.php";
 		
 // check action	
-if ( isset( $_GET['action'] ) ) {	
+if ( isset($_GET['action']) ) {	
     $action = $_GET['action'];		
     $action_ok = "yes";
 }
@@ -58,7 +58,7 @@ if ( $action_ok == "yes" ) {
 				$value1 = $_GET["form_mn_title"];
 				$value2 = trim($_GET["form_mn_txt"]);
 				$value3 = trim($_GET["form_mn_urls"]);
-				$value4 = trim($_GET["form_mn_p_id"]);
+				$value4 = $_GET["form_mn_p_id"];
 				$query_condition = "id = ".$id;
 				db_query_update_item_1("notes_main", $fields, $value1, $value2, $value3, $value4, $id);
 				header("Location: notes_edit.php?action=display&pa=".$id);
@@ -102,7 +102,7 @@ if ( $action_ok == "no" ) {
     return;
 } 
 
-echo "<form class='form-horizontal' role='form' action=".$_SERVER['PHP_SELF'].">";
+echo "<form role='form' action=".$_SERVER['PHP_SELF'].">";
 echo "<input type='hidden' name='action' value='".$form_input_type."'>";
 echo "<input type='hidden' name='pa' value=".$id.">";
 
@@ -111,8 +111,10 @@ if ( $tbl_row_parent ) {
     echo "<ul class='list-group'>";
     //echo "<li class='list-group-item'>".$tbl_row_parent["title"]."</li>";
     echo "<li class='list-group-item'><a href='notes_sub_list.php?action=find&amp;pa=".$tbl_row_parent["id"]."'>".$tbl_row_parent["title"]."</a></li>";
-    echo "<input type='text' class='form-control text1' name='form_mn_p_id' value='".$tbl_row_parent["id"]."'>";
     echo "</ul>";
+    echo "<div class='form-group'>";
+    echo "<input type='text' class='form-control text1' name='form_mn_p_id' value='".$tbl_row_parent["id"]."'>";
+    echo "</div>";
 }
 
 echo "<div class='form-group'>";
