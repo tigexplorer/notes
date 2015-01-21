@@ -110,7 +110,7 @@ echo "<input type='hidden' name='pa' value=".$id.">";
 if ( $tbl_row_parent ) {
     echo "<ul class='list-group'>";
     //echo "<li class='list-group-item'>".$tbl_row_parent["title"]."</li>";
-    echo "<li class='list-group-item'><a href='notes_sub_list.php?action=find&amp;pa=".$tbl_row_parent["id"]."'>".$tbl_row_parent["title"]."</a></li>";
+    echo "<li class='list-group-item'><a href='notes_main_list.php?action=list&find_option=one_p_and_c&amp;pa=".$tbl_row_parent["id"]."'>".$tbl_row_parent["title"]."</a></li>";
     echo "</ul>";
     echo "<div class='form-group'>";
     echo "<input type='text' class='form-control text1' name='form_mn_p_id' value='".$tbl_row_parent["id"]."'>";

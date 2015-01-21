@@ -25,6 +25,10 @@ if ( $action_ok != "yes" ) {
     $message = "No action. Nothing to do..... "; 
 }
 
+if ( isset($_GET['pa']) ) {	
+        $id = $_GET['pa'];
+}
+    
 // check find_option	
 $find_option_ok = "no";
 if ( isset($_GET['find_option']) ) {
@@ -40,6 +44,10 @@ if ( $find_option_ok = "yes" ) {
 				case "p_and_c":
             	$c_query_condition_main = "parent='0' ORDER BY title";
             	$c_query_condition = "parent<>'0' ORDER BY title";
+            	break;
+            case "one_p_and_c":
+            	$c_query_condition_main = "id=".$id;
+            	$c_query_condition = "parent=".$id;
             	break;
         }
         break;
