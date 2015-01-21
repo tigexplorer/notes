@@ -89,7 +89,7 @@ foreach ( $db_result_main as $tbl_row_main ) {
 	echo "<a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion' href='#collapse".$tbl_row_main["id"]."'>\n";
 	echo substr($tbl_row_main["title"], 0, 50);
 	echo "</a>\n";
-	echo "<p class='text-left'>(".$tbl_row_main["id"].")</p>";
+	echo "<p class='text-right'>(".$tbl_row_main["id"].")</p>";
 	echo "</span>";
 
 	echo "</div>\n"; //heading
