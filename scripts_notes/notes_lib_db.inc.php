@@ -33,11 +33,11 @@ function db_query_display_item_1( $table, $condition ){
     return $result;
 }
 
-function db_query_update_item_1( $table, $fields, $value1, $value2, $value3, $id ){
+function db_query_update_item_1( $table, $fields, $value1, $value2, $value3, $value4, $id ){
     // item aktualisieren
     $db = db_connect_pdo();
     $stmt = $db->prepare("UPDATE ".$table." SET ".$fields." WHERE id=?");
-    $stmt->execute(array($value1, $value2, $value3, $id));
+    $stmt->execute(array($value1, $value2, $value3, $value4, $id));
 
 }
 

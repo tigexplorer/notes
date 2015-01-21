@@ -54,12 +54,13 @@ if ( $action_ok == "yes" ) {
 				break;
 					    
 			case "update":
-				$fields = "title=?, notes=?, urls=?";
+				$fields = "title=?, notes=?, urls=?, parent=?";
 				$value1 = $_GET["form_mn_title"];
 				$value2 = trim($_GET["form_mn_txt"]);
 				$value3 = trim($_GET["form_mn_urls"]);
+				$value4 = trim($_GET["form_mn_p_id"]);
 				$query_condition = "id = ".$id;
-				db_query_update_item_1("notes_main", $fields, $value1, $value2, $value3, $id);
+				db_query_update_item_1("notes_main", $fields, $value1, $value2, $value3, $value4, $id);
 				header("Location: notes_edit.php?action=display&pa=".$id);
 				exit;
 				break;
