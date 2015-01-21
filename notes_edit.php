@@ -25,56 +25,55 @@ if ( $action_ok == "yes" ) {
         $id = $_GET['pa'];
     }
 				
-		// switch action 
-		if ( $id !="" ) { 
-        switch ( $action ):
-            case "new":
-                $form_input_type = "add"; //set form action
-                $message = "Details new ";
-                $c_query_condition = "id = ".$id;
-                break;
+	// switch action 
+	if ( $id !="" ) { 
+		switch ( $action ):
+			case "new":
+				$form_input_type = "add"; //set form action
+				$message = "Details new ";
+				$c_query_condition = "id = ".$id;
+				break;
             
-            case "add":    
-                $fields = "title, notes, urls, parent";
-                $new_id = db_query_add_item_1("notes_main", $fields, trim($_GET["form_mn_title"]), trim($_GET["form_mn_txt"]), trim($_GET["form_mn_urls"]), $id);
-                header( "Location: notes_edit.php?action=display&pa=".$new_id );
-                break;
+			case "add":    
+				$fields = "title, notes, urls, parent";
+				$new_id = db_query_add_item_1("notes_main", $fields, trim($_GET["form_mn_title"]), trim($_GET["form_mn_txt"]), trim($_GET["form_mn_urls"]), $id);
+				header( "Location: notes_edit.php?action=display&pa=".$new_id );
+				break;
 					         					         
-            case "display":
-                $form_input_type = "update"; //set form action
-                $message = "Details display ";
-                $c_query_condition = "id = ".$id;
-                $tbl_row = db_query_display_item_1("notes_main", $c_query_condition);	
-                // load childs
-                $c_query_condition_child = "parent = ".$id;
-                $tbl_row_child = db_query_display_item_1("notes_main", $c_query_condition_child);
-                // load parent
-                $c_query_condition_parent = "id = ".$tbl_row["parent"];
-                $tbl_row_parent = db_query_display_item_1("notes_main", $c_query_condition_parent);
-                break;
+			case "display":
+				$form_input_type = "update"; //set form action
+				$message = "Details display ";
+				$c_query_condition = "id = ".$id;
+				$tbl_row = db_query_display_item_1("notes_main", $c_query_condition);	
+				// load childs
+				$c_query_condition_child = "parent = ".$id;
+				$tbl_row_child = db_query_display_item_1("notes_main", $c_query_condition_child);
+				// load parent
+				$c_query_condition_parent = "id = ".$tbl_row["parent"];
+				$tbl_row_parent = db_query_display_item_1("notes_main", $c_query_condition_parent);
+				break;
 					    
-					    case "update":
-				         $fields = "title=?, notes=?, urls=?";
-				         $value1 = $_GET["form_mn_title"];
-				         $value2 = trim($_GET["form_mn_txt"]);
-				         $value3 = trim($_GET["form_mn_urls"]);
-			            $query_condition = "id = ".$id;
-			            db_query_update_item_1("notes_main", $fields, $value1, $value2, $value3, $id);
-			            header("Location: notes_edit.php?action=display&pa=".$id);
-			            exit;
-				         break;
+			case "update":
+				$fields = "title=?, notes=?, urls=?";
+				$value1 = $_GET["form_mn_title"];
+				$value2 = trim($_GET["form_mn_txt"]);
+				$value3 = trim($_GET["form_mn_urls"]);
+				$query_condition = "id = ".$id;
+				db_query_update_item_1("notes_main", $fields, $value1, $value2, $value3, $id);
+				header("Location: notes_edit.php?action=display&pa=".$id);
+				exit;
+				break;
 					       
-					    case "kill":
-                db_query_delete_item_1("notes_main", $id);
-                header("Location: notes_main_list.php?action=list&find_option=p_and_c");
-                exit;
-				endswitch;
-		} else { 
-				$message = "No ID. Nothing to do..... "; 
-		}
-		
+			case "kill":
+				db_query_delete_item_1("notes_main", $id);
+				header("Location: notes_main_list.php?action=list&find_option=p_and_c");
+				exit;
+			endswitch;
+	} else {
+		$message = "No ID. Nothing to do..... "; 
+	}
 } else {
-		$message = "No Command. Nothing to do..... "; 
+	$message = "No Command. Nothing to do..... "; 
 }
 ?>
 
@@ -88,9 +87,9 @@ if ( $action_ok == "yes" ) {
 	<meta name="robots" content="noindex,nofollow">
 	<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<!-- Bootstrap core CSS -->
- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
- <link href="style/notes_style.css" rel="stylesheet">
- <script src="bootstrap/js/bootstrap.min.js"></script>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="style/notes_style.css" rel="stylesheet">
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 <?php
@@ -111,6 +110,7 @@ if ( $tbl_row_parent ) {
     echo "<ul class='list-group'>";
     //echo "<li class='list-group-item'>".$tbl_row_parent["title"]."</li>";
     echo "<li class='list-group-item'><a href='notes_sub_list.php?action=find&amp;pa=".$tbl_row_parent["id"]."'>".$tbl_row_parent["title"]."</a></li>";
+    echo "<input type='text' class='form-control text1' name='form_mn_p_id' value='".$tbl_row_parent["id"]."'>";
     echo "</ul>";
 }
 
