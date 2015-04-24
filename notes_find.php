@@ -46,6 +46,10 @@ echo "<input type='text' class='form-control text1' name='form_mn_txt' value=''>
 echo "<input type='text' class='form-control text1' name='form_mn_urls' value=''>";
 echo "<div class='col-lg-offset-2 col-lg-10'>";
 echo "<button type='submit' class='btn btn-default'>Find</button>";
+echo "</div>";
+echo "</div>";
+echo "</form>";
+echo "</div>";
 ?>
 </body>
 </html>
