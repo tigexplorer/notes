@@ -38,7 +38,7 @@ require "../../scripts_notes/notes_lib_common.inc.php";
 <?php
 echo "<div class='container'>";
 html_menu("find");
-echo "<form class='form-horizontal' role='form' action='notes_find_list.php' method='POST'>";
+echo "<form role='form' action='notes_find_list.php' method='POST'>";
 echo "<input type='hidden' name='action' value='find'>";
 echo "<div class='form-group'>";
 echo "<input id= 'frm_title' type='text' class='form-control text1' name='form_mn_title' value=''>";
