@@ -105,9 +105,8 @@ foreach ( $db_result_main as $tbl_row_main ) {
 	// Buttons
 	echo " <a href='notes_edit.php?action=display&amp;pa=".$tbl_row_main["id"]."' class='btn btn-default btn-xs'>Edit or Delete Main</a>";
 	echo " <a href='notes_edit.php?action=new&amp;pa=".$tbl_row_main["id"]."' class='btn btn-default btn-xs'>New Sub</a>";
-	echo $child_items."-";
 	// End Buttons
-	echo " <span class='text-right'>(".$tbl_row_main["id"].")</span>";
+	echo " <span class='text-right'>(Main-ID: ".$tbl_row_main["id"].")</span>";
 	echo "<div class='panel-body'>\n";
     
 		// sub - list
