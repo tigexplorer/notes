@@ -88,7 +88,7 @@ if ( $action_ok == "no" ) {
 } 
 $z = 0;
 echo "<div class='panel-group' id='accordion'>\n";
-      
+$child_items = count($db_result);
 foreach ( $db_result_main as $tbl_row_main ) {
 	$z += 1;   
 	echo "<div class='panel panel-default'>\n";
@@ -102,8 +102,11 @@ foreach ( $db_result_main as $tbl_row_main ) {
 	echo "</div>\n"; //heading
 	
 	echo "<div id='collapse".$tbl_row_main["id"]."' class='panel-collapse collapse'>\n";
+	// Buttons
 	echo " <a href='notes_edit.php?action=display&amp;pa=".$tbl_row_main["id"]."' class='btn btn-default btn-xs'>Edit Main</a>";
 	echo " <a href='notes_edit.php?action=new&amp;pa=".$tbl_row_main["id"]."' class='btn btn-default btn-xs'>New Sub</a>";
+	echo $child_items."-";
+	// Buttons
 	echo " <span class='text-right'>(".$tbl_row_main["id"].")</span>";
 	echo "<div class='panel-body'>\n";
     
